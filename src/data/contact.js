@@ -32,8 +32,7 @@ export const FOOTER_NAV = [
 ]
 
 export const FOOTER_SOCIAL = [
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'Facebook', href: 'https://facebook.com' },
+  { label: 'Instagram', href: 'https://www.instagram.com/zinnia_abstract_dining/' },
 ]
 
 export const FOOTER_COPY = {
