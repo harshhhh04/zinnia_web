@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Outfit:wght@300;400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-zinnia-red: #7f1d1d;
+  --color-zinnia-red-deep: #450a0a;
+  --color-zinnia-gold: #c9a962;
+  --color-zinnia-cream: #e8e4df;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black font-sans antialiased text-zinnia-cream;
+  }
+}
+
+@layer components {
+  /* ── Layout ── */
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-28 lg:py-32;
+  }
+
+  /* ── Navbar ── */
+  .navbar-shell {
+    @apply bg-black/30 backdrop-blur-[6px];
+  }
+
+  .navbar-shell-scrolled {
+    @apply border-b border-white/[0.06] bg-black/85 backdrop-blur-md;
+  }
+
+  /* ── Typography ── */
+  .text-label {
+    @apply text-[9px] font-light uppercase tracking-[0.32em] text-white/25 sm:text-[10px];
+  }
+
+  .heading-hero {
+    @apply mx-auto max-w-[16rem] font-serif text-[1.875rem] font-light leading-[1.2] tracking-[0.01em] text-white sm:max-w-xs sm:text-4xl md:max-w-sm md:text-[2.65rem] lg:text-[3.1rem];
+  }
+
+  .heading-section {
+    @apply font-serif text-4xl font-light leading-[1.14] tracking-wide text-white sm:text-[2.65rem] lg:text-[3.25rem];
+  }
+
+  .text-body {
+    @apply text-base font-light leading-[1.85] text-white/50 sm:text-[16px];
+  }
+
+  .text-body-lg {
+    @apply text-base font-light leading-[1.75] text-gray-300/85 sm:text-lg;
+  }
+
+  .text-editorial {
+    @apply font-serif text-sm italic tracking-wide text-red-200/40 sm:text-[15px];
+  }
+
+  .text-supporting {
+    @apply text-[9px] font-light uppercase tracking-[0.28em] text-white/22 sm:text-[10px];
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex min-w-[180px] items-center justify-center border border-red-900/50 bg-red-950 px-10 py-3.5 text-[11px] font-normal uppercase tracking-[0.22em] text-white transition-all duration-500 hover:border-red-800/70 hover:bg-red-900;
+  }
+
+  .btn-primary-sm {
+    @apply inline-flex items-center justify-center border border-red-900/50 bg-red-950/90 px-5 py-2 text-[9px] font-normal uppercase tracking-[0.22em] text-white transition-all duration-500 hover:border-red-800/70 hover:bg-red-900;
+  }
+
+  .btn-secondary {
+    @apply relative inline-flex min-w-[180px] items-center justify-center px-8 py-3.5 text-[11px] font-light uppercase tracking-[0.22em] text-white/55 transition-colors duration-500 hover:text-white/90;
+  }
+
+  .btn-secondary-line {
+    @apply absolute bottom-2.5 left-1/2 h-px w-10 -translate-x-1/2 bg-white/25 transition-all duration-500 group-hover:w-[calc(100%-2rem)] group-hover:bg-red-800/60;
+  }
+
+  /* ── Navigation ── */
+  .nav-link {
+    @apply relative text-[9px] font-light uppercase tracking-[0.22em] text-white/50 transition-colors duration-400 hover:text-white/85;
+  }
+
+  .nav-link-line {
+    @apply absolute -bottom-1.5 left-0 h-px w-0 bg-red-800/60 transition-all duration-400 group-hover:w-full;
+  }
+
+  /* ── Dividers ── */
+  .divider-subtle {
+    @apply border-t border-white/[0.06];
+  }
+
+  .divider-vertical {
+    @apply border-l border-white/[0.06];
+  }
+
+  /* ── Statistics ── */
+  .stat-value {
+    @apply font-serif text-[2rem] font-light leading-none text-white sm:text-4xl lg:text-[2.85rem];
+  }
+
+  .stat-label {
+    @apply mt-2.5 text-[9px] font-light uppercase tracking-[0.24em] text-white/40 sm:text-[10px];
+  }
+
+  .heading-dish {
+    @apply font-serif text-3xl font-light leading-[1.15] tracking-wide text-white sm:text-4xl lg:text-[2.5rem];
+  }
+
+  /* ── Editorial ── */
+  .editorial-image:hover img {
+    @apply scale-[1.04];
+  }
+
+  .experience-panel {
+    @apply border border-white/[0.05] bg-white/[0.01] p-9 transition-all duration-500 hover:-translate-y-1 hover:border-red-900/20 hover:bg-red-950/[0.06] sm:p-10 lg:p-12;
+  }
+
+  .review-panel {
+    @apply flex h-full flex-col border border-white/[0.05] bg-white/[0.01] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-red-900/20 hover:bg-red-950/[0.05] sm:p-9 lg:p-10;
+  }
+
+  /* ── Forms ── */
+  .reservation-form-panel {
+    @apply border border-white/[0.05] bg-white/[0.02] p-8 transition-all duration-500 hover:border-white/[0.08] hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] sm:p-10 lg:p-12;
+  }
+
+  .form-field {
+    @apply relative;
+  }
+
+  .form-label {
+    @apply mb-2 block text-[9px] font-light uppercase tracking-[0.28em] text-white/35 sm:text-[10px];
+  }
+
+  .form-input {
+    @apply w-full border-b border-white/10 bg-transparent py-3.5 text-sm font-light text-white/85 placeholder:text-white/20 transition-all duration-400 focus:border-red-800/60 focus:outline-none;
+  }
+
+  .form-select {
+    @apply cursor-pointer appearance-none pr-6;
+  }
+
+  .form-textarea {
+    @apply border border-white/[0.06] px-4 py-3.5 focus:border-red-800/50;
+  }
+
+  .location-card {
+    @apply relative min-h-[18rem] overflow-hidden border border-white/[0.05] transition-all duration-500 hover:border-red-900/20 sm:min-h-[22rem];
+  }
+
+  .cta-block {
+    @apply relative;
+  }
+}
+
+/* Select arrow — plain CSS to avoid Tailwind URL parsing issues */
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath stroke='%23ffffff40' stroke-width='0.75' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 12px 8px;
+}
+
+@layer utilities {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 1s ease-out,
+      transform 1s ease-out;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-fade-in {
+    animation: hero-fade-in 1s ease-out both;
+  }
+
+  @keyframes menu-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .menu-fade-in {
+    animation: menu-fade-in 0.35s ease-out both;
+  }
+}
